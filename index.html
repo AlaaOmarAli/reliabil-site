@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reliabil — Reliable operations. Smarter decisions.</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
@@ -68,8 +71,6 @@
 
   .hero{padding:72px 0 60px;}
   .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
-  @media (max-width:820px){.hero-grid{grid-template-columns:1fr;gap:32px;}}
-  @media (max-width:480px){.hero h1{font-size:30px;}}
   .eyebrow{
     display:inline-flex;align-items:center;gap:8px;
     font-size:12.5px;font-weight:600;color:var(--orange);
@@ -95,7 +96,6 @@
   .mockup-bar .mockup-label{margin-left:auto;color:#94A3B8;font-size:11px;font-family:'JetBrains Mono',monospace;}
   .mockup-body{padding:20px;}
   .mockup-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:16px;}
-  @media (max-width:480px){.mockup-cards{grid-template-columns:repeat(2,1fr);}}
   .mcard{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:10px 8px;}
   .mcard .lbl{font-size:9.5px;color:var(--text-secondary);margin-bottom:4px;}
   .mcard .val{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:600;}
@@ -137,35 +137,31 @@
 
 
   .testimonials{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-  .testimonial-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;align-items:stretch;}
+  .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;}
   .testimonial-card{
     background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);
     overflow:hidden;display:flex;flex-direction:column;
   }
-  .testimonial-card.featured{grid-column:1 / -1;}
   .testimonial-media{background:#0B1220;overflow:hidden;}
   .testimonial-media.video{
-    width:min(100%,820px);aspect-ratio:16/9;margin:0 auto;
+    width:100%;aspect-ratio:4/3;margin:0 auto;
     border-radius:0;
   }
   .testimonial-media.audio{
-    min-height:150px;height:150px;display:flex;align-items:center;justify-content:center;
+    min-height:120px;height:120px;display:flex;align-items:center;justify-content:center;
   }
   .testimonial-media iframe{
     width:100%;height:100%;border:0;display:block;
   }
-  .testimonial-media.audio iframe{height:150px;}
-  @media (max-width:700px){
-    .testimonial-media.video{width:100%;aspect-ratio:16/9;}
-    .testimonial-media.audio,.testimonial-media.audio iframe{height:132px;min-height:132px;}
-  }
-  .testimonial-copy{padding:20px 22px 22px;}
-  .testimonial-copy h3{font-size:16px;margin-bottom:5px;}
-  .testimonial-copy p{font-size:13.5px;color:var(--text-secondary);}
-  .testimonial-role{font-size:11.5px;color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
-  @media (max-width:700px){
+  .testimonial-media.audio iframe{height:120px;}
+  .testimonial-copy{padding:18px 20px 20px;}
+  .testimonial-copy h3{font-size:15.5px;margin-bottom:3px;}
+  .testimonial-copy .testimonial-company{font-size:12.5px;color:var(--text-secondary);margin-bottom:8px;}
+  .testimonial-copy p{font-size:13px;color:var(--text-secondary);}
+  .testimonial-role{font-size:11px;color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
+  @media (max-width:900px){
     .testimonial-grid{grid-template-columns:1fr;}
-    .testimonial-card.featured{grid-column:auto;}
+    .testimonial-media.video{aspect-ratio:16/9;}
   }
 
   .pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:820px;margin:0 auto;}
@@ -201,6 +197,10 @@
   .cta h2{color:#fff;font-size:28px;margin-bottom:10px;}
   .cta p{color:#94A3B8;font-size:15px;margin-bottom:26px;}
   .cta .btn-primary{padding:12px 26px;font-size:15px;}
+  .cta-contact{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .cta-phone{background:transparent;color:#fff;border:1px solid #334155;padding:12px 26px;font-size:15px;}
+  .cta-phone:hover{border-color:#fff;}
+  @media (max-width:500px){.cta-contact{flex-direction:column;align-items:center;}}
 
   footer{padding:40px 0;text-align:center;color:var(--text-secondary);font-size:13px;}
   .footer-tagline{font-family:'Space Grotesk',sans-serif;font-size:12.5px;letter-spacing:0.14em;color:var(--slate);margin-bottom:10px;text-transform:uppercase;}
@@ -221,7 +221,7 @@
       <a href="#pricing">Pricing</a>
       <a href="#testimonials">Testimonials</a>
     </div>
-    <a href="https://calendly.com/alaaomaraliomar/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get started</a>
+    <a href="mailto:alaaomaraliomar@gmail.com?subject=Reliabil%20-%20Getting%20Started" class="btn btn-primary">Get started</a>
   </div>
 </nav>
 
@@ -259,7 +259,6 @@
       </div>
       <p class="mockup-caption">Example of a Reliabil performance view</p>
     </div>
-  </div>
   </div>
 </section>
 
@@ -329,18 +328,19 @@
     </div>
 
     <div class="testimonial-grid">
-      <article class="testimonial-card featured">
+      <article class="testimonial-card">
         <div class="testimonial-media video">
           <iframe
             src="https://drive.google.com/file/d/17I11VqiWkKeTliaFrZj9kTYDcASix2fF/preview"
-            title="Founder testimonial"
+            title="Mostafa Yehia testimonial"
             allow="autoplay; encrypted-media"
             allowfullscreen>
           </iframe>
         </div>
         <div class="testimonial-copy">
-          <div class="testimonial-role">Co-founder</div>
-          <h3>Founder perspective</h3>
+          <div class="testimonial-role">Co-Founder</div>
+          <h3>Mostafa Yehia</h3>
+          <div class="testimonial-company">Dial Masters Solutions</div>
           <p>What the experience was like working with Reliabil.</p>
         </div>
       </article>
@@ -349,13 +349,14 @@
         <div class="testimonial-media audio">
           <iframe
             src="https://drive.google.com/file/d/1ZJj4c2GA3qzUDLpy2sZNbn0PqRB6Rw7x/preview"
-            title="Team leader testimonial"
+            title="Omar Hawy testimonial"
             allow="autoplay">
           </iframe>
         </div>
         <div class="testimonial-copy">
-          <div class="testimonial-role">Team leader</div>
-          <h3>Team leader feedback</h3>
+          <div class="testimonial-role">Team Leader</div>
+          <h3>Omar Hawy</h3>
+          <div class="testimonial-company">Dial Masters Solutions</div>
           <p>Hear how the system fits into day-to-day operations.</p>
         </div>
       </article>
@@ -364,13 +365,14 @@
         <div class="testimonial-media audio">
           <iframe
             src="https://drive.google.com/file/d/1VPMAQS9G4r3XI0ygXuxOIWyiMPWtduSy/preview"
-            title="Team leader testimonial"
+            title="Mohamed Khalid testimonial"
             allow="autoplay">
           </iframe>
         </div>
         <div class="testimonial-copy">
-          <div class="testimonial-role">Team leader</div>
-          <h3>Team leader feedback</h3>
+          <div class="testimonial-role">Team Leader</div>
+          <h3>Mohamed Khalid</h3>
+          <div class="testimonial-company">Dial Masters Solutions</div>
           <p>Another real perspective from an operations team.</p>
         </div>
       </article>
@@ -399,7 +401,7 @@
           <li><span class="check">✓</span> Penalties & bonuses sheet</li>
           <li><span class="check">✓</span> Dynamic data-entry forms</li>
         </ul>
-        <a href="https://calendly.com/alaaomaraliomar/30min" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">Get started</a>
+        <a href="mailto:alaaomaraliomar@gmail.com?subject=Reliabil%20Core%20Plan%20-%20Getting%20Started" class="btn btn-ghost">Get started</a>
       </div>
       <div class="plan featured">
         <div class="plan-title">Advanced</div>
@@ -412,7 +414,7 @@
           <li><span class="check">✓</span> Peak-hour performance tracker</li>
           <li><span class="check">✓</span> Deeper filtering: month, week, team & campaign</li>
         </ul>
-        <a href="https://calendly.com/alaaomaraliomar/30min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Get started</a>
+        <a href="mailto:alaaomaraliomar@gmail.com?subject=Reliabil%20Advanced%20Plan%20-%20Getting%20Started" class="btn btn-primary">Get started</a>
         <p class="plan-note">Best for operations running multiple campaigns or teams</p>
       </div>
     </div>
@@ -425,7 +427,10 @@
   <div class="cta-wrap">
     <h2>Let's set up your dashboard.</h2>
     <p>Tell us your team size and campaigns, and we'll scope the setup.</p>
-    <a href="https://calendly.com/alaaomaraliomar/30min" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get started</a>
+    <div class="cta-contact">
+      <a href="mailto:alaaomaraliomar@gmail.com?subject=Reliabil%20-%20Getting%20Started" class="btn btn-primary">📧 alaaomaraliomar@gmail.com</a>
+      <a href="tel:+201011064291" class="btn btn-ghost cta-phone">📞 +20 101 106 4291</a>
+    </div>
   </div>
 </div>
 
