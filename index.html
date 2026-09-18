@@ -112,6 +112,10 @@
   .mock-row.head{background:var(--navy);color:#fff;font-weight:600;}
   .mock-row:not(.head){border-top:1px solid var(--border);color:var(--text-secondary);}
   .mock-row:not(.head) .name{color:var(--text);font-weight:500;}
+  @media (max-width:480px){
+    .mock-row{grid-template-columns:1.3fr 0.7fr 1.3fr;padding:8px 10px;font-size:10.5px;gap:4px;}
+    .mock-row .qual-col{display:none;}
+  }
   .bar-track{background:var(--border);border-radius:4px;height:6px;overflow:hidden;}
   .bar-fill{background:var(--orange);height:100%;border-radius:4px;}
   .mockup-caption{font-size:11px;color:var(--text-secondary);text-align:center;margin-top:12px;}
@@ -150,16 +154,16 @@
   }
   .testimonial-media{background:#0B1220;overflow:hidden;}
   .testimonial-media.video{
-    width:100%;aspect-ratio:4/3;margin:0 auto;
+    width:100%;aspect-ratio:3/4;margin:0 auto;
     border-radius:0;
   }
   .testimonial-media.audio{
-    min-height:120px;height:120px;display:flex;align-items:center;justify-content:center;
+    min-height:130px;height:130px;display:flex;align-items:center;justify-content:center;
   }
   .testimonial-media iframe{
     width:100%;height:100%;border:0;display:block;
   }
-  .testimonial-media.audio iframe{height:120px;}
+  .testimonial-media.audio iframe{height:130px;}
   .testimonial-copy{padding:18px 20px 20px;}
   .testimonial-copy h3{font-size:15.5px;margin-bottom:3px;}
   .testimonial-copy .testimonial-company{font-size:12.5px;color:var(--text-secondary);margin-bottom:8px;}
@@ -167,7 +171,7 @@
   .testimonial-role{font-size:11px;color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px;}
   @media (max-width:900px){
     .testimonial-grid{grid-template-columns:1fr;}
-    .testimonial-media.video{aspect-ratio:16/9;}
+    .testimonial-media.video{aspect-ratio:3/4;max-width:420px;margin:0 auto;}
   }
 
   .pricing-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;max-width:820px;margin:0 auto;}
@@ -257,10 +261,10 @@
           <div class="mcard success"><div class="lbl">DONE</div><div class="val">94%</div></div>
         </div>
         <div class="mock-table">
-          <div class="mock-row head"><div>Agent</div><div>Qual.</div><div>Target</div><div>Progress</div></div>
-          <div class="mock-row"><div class="name">Elijah M.</div><div>46</div><div>44</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
-          <div class="mock-row"><div class="name">Olivia B.</div><div>45</div><div>44</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
-          <div class="mock-row"><div class="name">James C.</div><div>33</div><div>44</div><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div></div>
+          <div class="mock-row head"><div>Agent</div><div class="qual-col">Qual.</div><div>Target</div><div>Progress</div></div>
+          <div class="mock-row"><div class="name">Elijah M.</div><div class="qual-col">46</div><div>44</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
+          <div class="mock-row"><div class="name">Olivia B.</div><div class="qual-col">45</div><div>44</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></div>
+          <div class="mock-row"><div class="name">James C.</div><div class="qual-col">33</div><div>44</div><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div></div>
         </div>
       </div>
       <p class="mockup-caption">Example of a Reliabil performance view</p>
@@ -335,7 +339,7 @@
 
     <div class="testimonial-grid">
       <article class="testimonial-card">
-        <div class="testimonial-media video">
+        <div class="testimonial-media audio">
           <iframe
             src="https://drive.google.com/file/d/17I11VqiWkKeTliaFrZj9kTYDcASix2fF/preview"
             title="Mostafa Yehia testimonial"
@@ -352,7 +356,7 @@
       </article>
 
       <article class="testimonial-card">
-        <div class="testimonial-media audio">
+        <div class="testimonial-media video">
           <iframe
             src="https://drive.google.com/file/d/1ZJj4c2GA3qzUDLpy2sZNbn0PqRB6Rw7x/preview"
             title="Omar Hawy testimonial"
@@ -368,7 +372,7 @@
       </article>
 
       <article class="testimonial-card">
-        <div class="testimonial-media audio">
+        <div class="testimonial-media video">
           <iframe
             src="https://drive.google.com/file/d/1VPMAQS9G4r3XI0ygXuxOIWyiMPWtduSy/preview"
             title="Mohamed Khalid testimonial"
